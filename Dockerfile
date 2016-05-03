@@ -1,4 +1,4 @@
-FROM openshift:php
+FROM registry.access.redhat.com/rhscl/php-56-rhel7
 
 MAINTAINER Cyrille Puget
 
