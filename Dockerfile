@@ -2,19 +2,16 @@ FROM registry.access.redhat.com/rhscl/php-56-rhel7
 
 MAINTAINER Cyrille Puget
 
-ENV PS_VERSION 1.6.1.4
-
-ENV PS_DOMAIN prestashop.local
-
-ENV PS_LANGUAGE en
-ENV PS_COUNTRY gb
-ENV PS_INSTALL_AUTO 0
-ENV PS_DEV_MODE 0
-ENV PS_HOST_MODE 0
-ENV PS_HANDLE_DYNAMIC_DOMAIN 0
-
-ENV PS_FOLDER_ADMIN admin
-ENV PS_FOLDER_INSTALL install
+ENV PS_VERSION=1.6.1.4 \
+PS_DOMAIN=prestashop.local \
+PS_LANGUAGE=en  \
+PS_COUNTRY=gb \
+PS_INSTALL_AUTO=0 \
+PS_DEV_MODE=0 \
+PS_HOST_MODE=0 \
+PS_HANDLE_DYNAMIC_DOMAIN=0 \
+PS_FOLDER_ADMIN=admin \
+PS_FOLDER_INSTALL=install
 
 
 # Avoid MySQL questions during installation
