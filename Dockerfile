@@ -1,17 +1,11 @@
 FROM php:5.6-apache
 
-MAINTAINER Thomas Nabord <thomas.nabord@prestashop.com>
+MAINTAINER Cyrille Puget
 
-ENV PS_VERSION {PS_VERSION}
+ENV PS_VERSION https://www.prestashop.com/ajax/controller.php?method=download&type=releases&file=prestashop_1.6.1.4.zip&language=fr
 
 ENV PS_DOMAIN prestashop.local
-ENV DB_SERVER 127.0.0.1
-ENV DB_PORT 3306
-ENV DB_NAME prestashop
-ENV DB_USER root
-ENV DB_PASSWD admin
-ENV ADMIN_MAIL demo@prestashop.com
-ENV ADMIN_PASSWD prestashop_demo
+
 ENV PS_LANGUAGE en
 ENV PS_COUNTRY gb
 ENV PS_INSTALL_AUTO 0
@@ -54,9 +48,7 @@ RUN chown www-data:www-data -R /var/www/html/
 # PHP configuration
 COPY config_files/php.ini /usr/local/etc/php/
 
-# MySQL configuration
-RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
-EXPOSE 3306
+
 
 VOLUME /var/www/html/modules
 VOLUME /var/www/html/themes
