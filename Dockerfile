@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhscl/php-56-rhel7
+FROM php:5.6-apache
 
 MAINTAINER Cyrille Puget
 
