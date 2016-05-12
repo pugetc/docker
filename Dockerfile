@@ -13,12 +13,6 @@ PS_HANDLE_DYNAMIC_DOMAIN=0 \
 PS_FOLDER_ADMIN=admin \
 PS_FOLDER_INSTALL=install
 
-
-# Avoid MySQL questions during installation
-ENV DEBIAN_FRONTEND noninteractive
-RUN echo mysql-server-5.6 mysql-server/root_password password $DB_PASSWD | debconf-set-selections
-RUN echo mysql-server-5.6 mysql-server/root_password_again password $DB_PASSWD | debconf-set-selections
-
 RUN apt-get update \
 	&& apt-get install -y libmcrypt-dev \
 		libjpeg62-turbo-dev \
